@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>This is the success page</h1>
+<div class="h-screen flex justify-center items-center relative">
+    <a href=" {% url 'logout' %} " class="absolute top-0 right-0 mr-4 mt-4 bg-green-600 hover:bg-green-500 cursor-pointer text-white rounded-md px-4 py-1">Logout</a>
+    <h1 class="text-2xl">Successfully logged in 🎉</h1>
+</div>
 {% endblock %}
