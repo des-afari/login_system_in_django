@@ -1,0 +1,17 @@
+input{
+    width: 100%;
+    margin-bottom: 0.5rem;
+    border: 2px solid #16a34a;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+}
+
+input[type='text'], input[type='password']{
+    border: 2px solid #cbccce;
+    padding-left: 0.375rem;
+}
+
+input[type='text']:focus, input[type='password']:focus{
+    outline: none;
+    border-color: #16a34a;
+}

@@ -1,33 +1,17 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block head %}
-<style>
-    input{
-        width: 100%;
-        margin-bottom: 0.5rem;
-        border: 2px solid #16a34a;
-        padding: 0.25rem;
-        border-radius: 0.25rem;
-    }
-
-    input[type='text'], input[type='password']{
-        border: 2px solid black;
-        padding-left: 0.375rem;
-    }
-</style>
-{% endblock %}
 {% block content %}
 <main class="h-screen p-6 flex justify-center items-center">
-    <div class="flex flex-col md:grid md:grid-cols-2">
-        <img src="{% static 'svg/main.svg' %}" alt="main" class="self-center w-3/4 mb-4">
-        <div>
+    <div class="flex flex-col sm:w-5/12 sm:bg-gray-50 sm:p-4 sm:rounded-lg sm:border-2 sm:shadow-xl lg:w-3/12">
+        <img src="{% static 'svg/main.svg' %}" alt="main" class=" self-center mb-4 w-3/4">
+        <div class="sm:flex-1">
             <h1 class="text-2xl text-center">Create an account</h1>
             <p class="text-center mb-2">or <a href="{% url 'login' %}" class="text-green-600 hover:text-green-500">log in</a></p>
-            <small class="text-white">Invalid credentials</small>
+            <small class="text-white sm:text-gray-50">Invalid credentials</small>
             <form action="" method="POST">
                 {% csrf_token %}
                 {{form}}
-                <input type="submit" value="Sign up" class="bg-green-600 text-white hover:bg-green-500 hover:border-green-500">
+                <input type="submit" value="Sign up" class="bg-green-600 text-white hover:bg-green-500 hover:border-green-500 cursor-pointer">
             </form>
         </div>
     </div>
