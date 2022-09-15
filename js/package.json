@@ -1,0 +1,13 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "watch": "tailwindcss -i ./input.css -o ../static/css/main.css --watch",
+    "minify": "tailwindcss -i ./input.css -o ../static/css/main.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.1.8"
+  }
+}
