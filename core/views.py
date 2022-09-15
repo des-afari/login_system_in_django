@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .forms import RegistrationForm
 import re
@@ -66,3 +67,7 @@ def signup(request):
 
         return render(request, 'registration/signup.html', context)
 
+
+@login_required(login_url='login')
+def success(request):
+    return render(request, 'success.html')

@@ -6,3 +6,4 @@ class RegistrationForm(forms.Form):
     email = forms.EmailField(label='', widget=forms.TextInput(attrs={'placeholder': 'Email'}))
     password = forms.CharField(label='', widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
     password_check = forms.CharField(label='', widget=forms.PasswordInput(attrs={'placeholder': 'Re-enter password'}))
+

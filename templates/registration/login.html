@@ -1,5 +1,37 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
-<h1>This is the login page</h1>
+<main class="h-screen p-6 flex justify-center items-center">
+    <div class="flex flex-col sm:w-5/12 sm:bg-gray-50 sm:p-4 sm:rounded-lg sm:border-2 sm:shadow-xl lg:w-3/12">
+        <img src="{% static 'svg/main.svg' %}" alt="main" class=" self-center mb-4 w-3/4">
+        <div class="sm:flex-1">
+            <h1 class="text-2xl text-center">Welcome back</h1>
+            <p class="text-center mb-4">or <a href="{% url 'login' %}" class="text-green-600 hover:text-green-500">sign up</a></p>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{form}}
+                <input type="submit" value="Log in" class="bg-green-600 text-white hover:bg-green-500 hover:border-green-500 cursor-pointer">
+            </form>
+        </div>
+    </div>
+</main>
+<style>
+    .errorlist > li{
+        font-size: smaller;
+        color: red;
+        text-align: center;
+    }
+
+    label{
+        display: none;
+    }
+
+    input{
+        margin-bottom: 1rem;
+    }
+</style>
+<script>
+    document.getElementById('id_username').placeholder = 'Email'
+    document.getElementById('id_password').placeholder = 'Password'
+</script>
 {% endblock %}
